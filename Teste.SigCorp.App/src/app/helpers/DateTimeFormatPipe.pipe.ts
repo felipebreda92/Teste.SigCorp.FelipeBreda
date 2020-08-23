@@ -8,7 +8,7 @@ import { Constants } from '../utils/constants';
 export class DateTimeFormatPipePipe extends DatePipe implements PipeTransform {
 
   transform(value: any, args?: any): any {
-    return super.transform(value, Constants.DATE_TIME_FMT);
+    return super.transform(value, Constants.DATE_FMT);
   }
 
 }

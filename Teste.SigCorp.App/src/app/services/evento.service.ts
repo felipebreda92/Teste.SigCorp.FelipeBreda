@@ -12,7 +12,6 @@ export class EventoService {
   constructor(private http: HttpClient) { }
 
   getAllEvento(): Observable<Evento[]> {
-    console.log(`${this.baseUrl}/obter-eventos`);
     return this.http.get<Evento[]>(`${this.baseUrl}obter-eventos`);
   }
 
@@ -20,4 +19,15 @@ export class EventoService {
     return this.http.get<Evento>(`${this.baseUrl}obter-eventos/${id}`);
   }
 
+  postEvento(evento: Evento) {
+    return this.http.post(`${this.baseUrl}adicionar`, evento);
+  }
+
+  putEvento(evento: Evento) {
+    return this.http.put(`${this.baseUrl}atualizar/${evento.id}`, evento);
+  }
+
+  deleteEvento(id: number) {
+    return this.http.delete(`${this.baseUrl}deletar/${id}`);
+  }
 }
